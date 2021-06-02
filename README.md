@@ -15,3 +15,7 @@ Features to be added:
 Additional Feature(s):
 
 Implement a functioning reset button :white_check_mark:
+
+Known Bug(s):
+
+Does not permit replay once final result (game outcome) has been given.
