@@ -14,7 +14,7 @@ Features to be added:
 
 Additional Feature(s):
 
-1. mplement a functioning reset button :white_check_mark:
+1. Implement a functioning reset button :white_check_mark:
 
 2. Add a focus attribute to the buttons for more compatibility
 

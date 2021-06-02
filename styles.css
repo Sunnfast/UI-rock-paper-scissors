@@ -85,6 +85,7 @@ h2 {
 }
 
 .choice-btn:hover {
+    cursor: pointer;
     background-color:white;
     color: #ffffff;
     text-shadow:
@@ -134,4 +135,19 @@ h2 {
     display: flex;
     justify-content: space-evenly;
     padding-right: 2em;
+}
+
+footer {
+    display: flex;
+    justify-content: right;
+}
+
+#github-link {
+    text-decoration: none;
+}
+
+#github-link:hover {
+    color: black;
+
+
 }
