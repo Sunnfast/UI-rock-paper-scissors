@@ -14,7 +14,11 @@ Features to be added:
 
 Additional Feature(s):
 
-Implement a functioning reset button :white_check_mark:
+1. mplement a functioning reset button :white_check_mark:
+
+2. Add a focus attribute to the buttons for more compatibility
+
+3. Optimize for mobile/smaller devices
 
 Known Bug(s):
 
