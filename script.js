@@ -72,6 +72,9 @@ resetB.addEventListener('click', () => {
     computerScore = 0;
     playerScore = 0;
     scoreboardUpdate();
+    document.getElementById("rock-btn").disabled = false;
+    document.getElementById("paper-btn").disabled = false;
+    document.getElementById("scissors-btn").disabled = false;
     
     
     
@@ -98,13 +101,12 @@ function roundOutcome() {
     // calculates who wins via who gets five wins first
     function gameOutcome(playerScore, computerScore) {
             if (playerScore > computerScore) {
-                display = 'You won the best out of five games with a total of' + playerScore + '!';
+                display = 'You won by being the first one to reach five wins, congrats!';
 
             } else if (playerScore < computerScore) {
-                display = 'Too bad! You lost the best of five games, better luck next time!';
+                display = 'Too bad! The computer was the first to reach five wins, better luck next time!';
 
             }
-        // return playerScore, computerScore
            
     }
     

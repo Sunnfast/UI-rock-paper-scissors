@@ -18,4 +18,4 @@ Implement a functioning reset button :white_check_mark:
 
 Known Bug(s):
 
-Does not permit replay once final result (game outcome) has been given.
+Does not permit replay once final result (game outcome) has been given. (resolved: 6.2.21) :white_check_mark:
