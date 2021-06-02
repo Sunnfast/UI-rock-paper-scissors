@@ -75,6 +75,8 @@ resetB.addEventListener('click', () => {
     document.getElementById("rock-btn").disabled = false;
     document.getElementById("paper-btn").disabled = false;
     document.getElementById("scissors-btn").disabled = false;
+    display = "Rock, paper, scissors ... shoot!"
+    displayTextPlace();
     
     
     
