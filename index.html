@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <div id = "gradient">
 <head>
     <title> Rock, Paper, Scissors!</title>
@@ -15,7 +16,9 @@
 
 </head>
 <body>
-<h1>User interface is under construction. Thank you for your patience.</h1>
+<h1>Rock, paper, scissors!</h1>
+<h2>Please select a button below to play a round.</h2>
+
 
 <!--scoreboard-->
 <div id ="scoreboard"
@@ -23,22 +26,36 @@ class = "scoreboard">
     <div id = "scoreboard-block">
 
         <p id = "scoreboardComputer"></p> 
-        <p>-</p> 
+        <p>&nbsp; &nbsp;-&nbsp; &nbsp;</p> 
         <p id = "scoreboardPlayer"></p>
 
+        <div id = "scoreboardNames">
+            Computer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            Player
+        </div>
+
     </div>
-        
+
+
 
 
 </div>
+<p id = "displayText">
+
+</p>
+<br>
+<br>
+<p id = "outcomeText">
+
+</p>
 
 <!-- selection buttons-->
 <div id = "buttons">
-    <button type="button" 
+    <button type = "button" 
     id = "rock-btn" 
     class = "choice-btn">Rock</button>
     
-    <button type="button" 
+    <button type = "button" 
     id = "paper-btn"
     class = "choice-btn">Paper</button>
     
@@ -48,6 +65,12 @@ class = "scoreboard">
 
 </div>
 
+<div id = "reset">
+    <button type = "button"
+    id = "reset-btn"
+    class = "choice-btn">Reset</button>
+
+</div>
     
 </body>
 </div>

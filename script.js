@@ -1,8 +1,13 @@
-// buttons
+// buttons & choices
 let playerScore = 0;
 let computerScore = 0;
+let outcomeFlavorText = ''
+let display = "Rock, paper, scissors ... shoot!"
 
-scoreboardUpdate()
+
+// gameplay loop functions
+scoreboardUpdate();
+displayTextPlace();
 
 const rockB = document.querySelector('#rock-btn');
 rockB.addEventListener('click', () => {
@@ -11,6 +16,16 @@ rockB.addEventListener('click', () => {
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
         scoreboardUpdate();
+        roundOutcome();
+        if (playerScore == 5 || computerScore == 5) {
+            gameOutcome(playerScore, computerScore);
+            displayTextPlace();
+
+            // disables the buttons once game is over
+            document.getElementById("rock-btn").disabled = true;
+            document.getElementById("paper-btn").disabled = true;
+            document.getElementById("scissors-btn").disabled = true;
+        }
 });
 
 const paperB = document.querySelector('#paper-btn');
@@ -19,6 +34,17 @@ paperB.addEventListener('click', () => {
         computerPlay()
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
+        scoreboardUpdate();
+        roundOutcome();
+        if (playerScore == 5 || computerScore == 5) {
+            gameOutcome(playerScore, computerScore);
+            displayTextPlace();
+
+            // disables the buttons once game is over
+            document.getElementById("rock-btn").disabled = true;
+            document.getElementById("paper-btn").disabled = true;
+            document.getElementById("scissors-btn").disabled = true;
+        }
 });
 
 const scissorsB = document.querySelector('#scissors-btn');
@@ -27,77 +53,61 @@ scissorsB.addEventListener('click', () => {
         computerPlay()
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
+        scoreboardUpdate();
+        roundOutcome();
+        if (playerScore == 5 || computerScore == 5) {
+            gameOutcome(playerScore, computerScore);
+            displayTextPlace();
+
+            // disables the buttons once game is over
+            document.getElementById("rock-btn").disabled = true;
+            document.getElementById("paper-btn").disabled = true;
+            document.getElementById("scissors-btn").disabled = true;
+        }
 });
 
-// experimental script
+// reset button
+const resetB = document.querySelector("#reset-btn");
+resetB.addEventListener('click', () => {
+    if (computerScore > 0 || playerScore > 0) {
+        computerScore - computerScore;
+        playerScore - playerScore;
+    }
+    
+    
+    
+});
 
-
-
-function scoreboardUpdate() {
-    document.getElementById("scoreboardComputer").innerHTML = computerScore;
-    document.getElementById("scoreboardPlayer").innerHTML = playerScore;
+// general display/game outcome text
+function displayTextPlace() {
+    document.getElementById("displayText").innerText = display;
 }
 
 
-// JS script for game begins here
+// update scoreboard
 
-        
+function scoreboardUpdate() {
+    document.getElementById("scoreboardComputer").innerText = computerScore;
+    document.getElementById("scoreboardPlayer").innerText= playerScore;
+}
 
+// update round outcome flavor text
+function roundOutcome() {
+    document.getElementById("outcomeText").innerText = outcomeFlavorText
+}
 
-    game()
-
-    function game() {
-
-        // full gameplay 'loop': plays five times
-        //let computerSelection = computerPlay();
-        //let playerSelection = playerPlay();
-        //playRound(playerSelection, computerSelection);
-        //keepScore(playerScore, computerScore);
-
-        //computerSelection = computerPlay();
-        //playerSelection = playerPlay();
-        //playRound(playerSelection, computerSelection);
-        //keepScore(playerScore, computerScore);
-
-        //computerSelection = computerPlay();
-        //playerSelection = playerPlay();
-        //playRound(playerSelection, computerSelection);
-        //keepScore(playerScore, computerScore);
-
-        //computerSelection = computerPlay();
-        //playerSelection = playerPlay();
-        //playRound(playerSelection, computerSelection);
-        //keepScore(playerScore, computerScore);
-
-        //computerSelection = computerPlay();
-        //playerSelection = playerPlay();
-        //playRound(playerSelection, computerSelection);
-        //keepScore(playerScore, computerScore);
-
-        // gives the final score of the game
-        gameOutcome(playerScore, computerScore);
-        
-        
-    }
-
-    // calculates who wins the best of five
+    // calculates who wins via who gets five wins first
     function gameOutcome(playerScore, computerScore) {
             if (playerScore > computerScore) {
-                console.log('You won the best out of five games with a total of' + playerScore + '!');
+                display = 'You won the best out of five games with a total of' + playerScore + '!';
 
             } else if (playerScore < computerScore) {
-                console.log('Too bad! You lost the best of five games, better luck next time!');
+                display = 'Too bad! You lost the best of five games, better luck next time!';
 
-            } else if (playerScore == computerScore) {
-                console.log('A tie! This is pretty rare.');
             }
+        // return playerScore, computerScore
+           
     }
-
-    // keeps score during the game
-    function keepScore(playerScore, computerScore) {
-        console.log('You have currently won '+ playerScore + ' games, and the computer has won ' + computerScore + ' games.')
-    }
-
     
     //assigns the computer a pick for the game
     function computerPlay() {
@@ -122,14 +132,14 @@ function scoreboardUpdate() {
 
             // vs player picking rock
             if (playerSelection === "rock") {
-                console.log(`Draw! Unsurprisingly, ${playerSelection} against ${computerSelection} does absolutely nothing!`);
+                outcomeFlavorText = `Draw!`;
             // vs player picking paper
             } else if (playerSelection === "paper") {
-                console.log(`You win because ${playerSelection} beats ${computerSelection}!`);
+                outcomeFlavorText = `You win, because ${playerSelection} beats ${computerSelection}!`;
                 playerScore++
             // vs player picking scissors
             } else if (playerSelection === "scissors") {
-                console.log(`You lose because ${computerSelection} beats ${playerSelection}!`);
+                outcomeFlavorText = `You lose, because ${computerSelection} beats ${playerSelection}!`;
                 computerScore++
             }
         }
@@ -138,14 +148,14 @@ function scoreboardUpdate() {
         else if (computerSelection === "paper") {
             // vs player picking paper
             if (playerSelection === "paper") {
-                console.log(`Draw! Unsurprisingly, ${playerSelection} against ${computerSelection} does absolutely nothing!`);
+                outcomeFlavorText = `Draw!`;
             // vs player picking scissors
             } else if (playerSelection === "scissors") {
-                console.log(`You win because ${playerSelection} beats ${computerSelection}!`);
+                outcomeFlavorText = `You win, because ${playerSelection} beats ${computerSelection}!`;
                 playerScore++
             // vs player picking rock
             } else if (playerSelection === "rock") {
-                console.log(`You lose because ${computerSelection} beats ${playerSelection}!`);
+                outcomeFlavorText = `You lose, because ${computerSelection} beats ${playerSelection}!`;
                 computerScore++
             }
             
@@ -155,14 +165,14 @@ function scoreboardUpdate() {
         else if (computerSelection === "scissors") {
             // vs player picking scissors
             if (playerSelection === "scissors") {
-                console.log(`Draw! Unsurprisingly, ${playerSelection} against ${computerSelection} does absolutely nothing!`);
+                outcomeFlavorText = `Draw!`;
             // vs player picking rock
             } else if (playerSelection === "rock") {
-                console.log(`You win because ${playerSelection} beats ${computerSelection}!`);
+                outcomeFlavorText = `You win, because ${playerSelection} beats ${computerSelection}!`;
                 playerScore++
             // vs player picking paper
             } else if (playerSelection === "paper") {
-                console.log(`You lose because ${computerSelection} beats ${playerSelection}!`);
+                outcomeFlavorText = `You lose, because ${computerSelection} beats ${playerSelection}!`;
                 computerScore++
             }
                 
