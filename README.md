@@ -10,8 +10,8 @@ Features to be added:
     
     * change all console.log commands to DOM methods :white_check_mark:
 
-3. announcewinner of the game once either the player or computer reaches 5 points (wins) :white_check_mark:
+3. announce winner of the game once either the player or computer reaches 5 points :white_check_mark:
 
 Additional Feature(s):
 
-Implement a functioning reset button
+Implement a functioning reset button :white_check_mark:

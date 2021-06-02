@@ -69,10 +69,9 @@ scissorsB.addEventListener('click', () => {
 // reset button
 const resetB = document.querySelector("#reset-btn");
 resetB.addEventListener('click', () => {
-    if (computerScore > 0 || playerScore > 0) {
-        computerScore - computerScore;
-        playerScore - playerScore;
-    }
+    computerScore = 0;
+    playerScore = 0;
+    scoreboardUpdate();
     
     
     

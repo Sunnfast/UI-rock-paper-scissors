@@ -114,8 +114,20 @@ h2 {
 
 #reset-btn {
     border-radius: 30px;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
 }
+
+#reset-btn:hover {
+    background-color: red;
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    
+}
+
 
 #reset {
     margin-top: 2em;
