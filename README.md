@@ -1,7 +1,9 @@
 # UI-rock-paper-scissors
 A new version of the rock, paper, scissors game which includes a UI.
 
-Features to be added:
+Features to be added:\
+
+
 :white_check_mark: create three buttons for each move in rock, paper, scissors
     * use eventListener that calls playRound with the correct playerSelection
 
