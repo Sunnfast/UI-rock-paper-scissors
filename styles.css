@@ -10,6 +10,28 @@ html{
     
 }
 
+/* scoreboard styling */
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    
+}
+
+#scoreboard-block {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    color: red;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 20px solid black;
+    width: 40%;
+    height: auto;
+}
+
+
+/* button styling */
 #buttons {
     display: flex;
     justify-content: space-evenly;

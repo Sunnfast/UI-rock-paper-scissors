@@ -1,16 +1,22 @@
 // buttons
+let playerScore = 0;
+let computerScore = 0;
 
+scoreboardUpdate()
 
 const rockB = document.querySelector('#rock-btn');
 rockB.addEventListener('click', () => {
         playerSelection = "rock";
+        computerPlay()
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
+        scoreboardUpdate();
 });
 
 const paperB = document.querySelector('#paper-btn');
 paperB.addEventListener('click', () => {
         playerSelection = "paper";
+        computerPlay()
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
 });
@@ -18,17 +24,25 @@ paperB.addEventListener('click', () => {
 const scissorsB = document.querySelector('#scissors-btn');
 scissorsB.addEventListener('click', () => {
         playerSelection = "scissors";
+        computerPlay()
         let computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
 });
+
+// experimental script
+
+
+
+function scoreboardUpdate() {
+    document.getElementById("scoreboardComputer").innerHTML = computerScore;
+    document.getElementById("scoreboardPlayer").innerHTML = playerScore;
+}
 
 
 // JS script for game begins here
 
         
 
-    let playerScore = 0;
-    let computerScore = 0;
 
     game()
 
@@ -96,11 +110,7 @@ scissorsB.addEventListener('click', () => {
         
         return compPick;
         
-    }
-     
-    // lets player pick
-    
-            
+    }       
     
 
     // play one round
