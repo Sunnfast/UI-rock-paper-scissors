@@ -6,5 +6,53 @@ html{
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
+    font-family: 'Limelight', cursive;
     
 }
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.choice-btn {
+    background-color: black;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 30px;
+    border-radius: 12px;
+    transition: 0.4s;
+    font-family: 'Limelight', cursive;
+}
+
+.choice-btn:hover {
+    background-color:white;
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    
+}
+
+#rock-btn:hover {
+    background-image: url("https://static.thenounproject.com/png/16776-200.png");
+    background-size: contain;
+}
+
+#paper-btn:hover{
+    background-image: url("https://static.thenounproject.com/png/38085-200.png");
+    background-size: contain;
+}
+
+#scissors-btn:hover{
+    background-image: url("https://static.thenounproject.com/png/2585-200.png");
+    background-size: contain;
+    
+
+}
+
