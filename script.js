@@ -1,6 +1,25 @@
+// buttons
+
+
 const rockB = document.querySelector('#rock-btn');
 rockB.addEventListener('click', () => {
-        alert("Rock button pressed");
+        playerSelection = "rock";
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+});
+
+const paperB = document.querySelector('#paper-btn');
+paperB.addEventListener('click', () => {
+        playerSelection = "paper";
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
+});
+
+const scissorsB = document.querySelector('#scissors-btn');
+scissorsB.addEventListener('click', () => {
+        playerSelection = "scissors";
+        let computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection);
 });
 
 
@@ -16,30 +35,30 @@ rockB.addEventListener('click', () => {
     function game() {
 
         // full gameplay 'loop': plays five times
-        let computerSelection = computerPlay();
-        let playerSelection = playerPlay();
-        playRound(playerSelection, computerSelection);
-        keepScore(playerScore, computerScore);
+        //let computerSelection = computerPlay();
+        //let playerSelection = playerPlay();
+        //playRound(playerSelection, computerSelection);
+        //keepScore(playerScore, computerScore);
 
-        computerSelection = computerPlay();
-        playerSelection = playerPlay();
-        playRound(playerSelection, computerSelection);
-        keepScore(playerScore, computerScore);
+        //computerSelection = computerPlay();
+        //playerSelection = playerPlay();
+        //playRound(playerSelection, computerSelection);
+        //keepScore(playerScore, computerScore);
 
-        computerSelection = computerPlay();
-        playerSelection = playerPlay();
-        playRound(playerSelection, computerSelection);
-        keepScore(playerScore, computerScore);
+        //computerSelection = computerPlay();
+        //playerSelection = playerPlay();
+        //playRound(playerSelection, computerSelection);
+        //keepScore(playerScore, computerScore);
 
-        computerSelection = computerPlay();
-        playerSelection = playerPlay();
-        playRound(playerSelection, computerSelection);
-        keepScore(playerScore, computerScore);
+        //computerSelection = computerPlay();
+        //playerSelection = playerPlay();
+        //playRound(playerSelection, computerSelection);
+        //keepScore(playerScore, computerScore);
 
-        computerSelection = computerPlay();
-        playerSelection = playerPlay();
-        playRound(playerSelection, computerSelection);
-        keepScore(playerScore, computerScore);
+        //computerSelection = computerPlay();
+        //playerSelection = playerPlay();
+        //playRound(playerSelection, computerSelection);
+        //keepScore(playerScore, computerScore);
 
         // gives the final score of the game
         gameOutcome(playerScore, computerScore);
@@ -80,22 +99,9 @@ rockB.addEventListener('click', () => {
     }
      
     // lets player pick
-    function playerPlay() {
-        playerPick = window.prompt('Please select rock, paper, or scissors to play!');
-        playerPick = playerPick.toLowerCase();
-            // removes case sensitivity issues
-            if (playerPick === "rock" ||  playerPick === "paper" || playerPick === "scissors") {
-                alert('Great, now let us get started!')
-                
-            } else {
-                alert('Please input rock, paper, or scissors.');
-            }
-
-        console.log('You played ' + playerPick + '!');
+    
             
-            return playerPick
-            
-    }
+    
 
     // play one round
     function playRound(playerSelection, computerSelection) {  

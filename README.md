@@ -2,7 +2,7 @@
 A new version of the rock, paper, scissors game which includes a UI.
 
 Features to be added:
-1. create three buttons for each move in rock, paper, scissors
+:white_check_mark: create three buttons for each move in rock, paper, scissors
     * use eventListener that calls playRound with the correct playerSelection
 
 2. add a `<div>` for displaying the score of the series of games

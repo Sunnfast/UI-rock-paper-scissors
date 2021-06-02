@@ -1,0 +1,10 @@
+
+html{
+
+    /* styling for the gradient in the background */
+    background-image: linear-gradient(red, yellow);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    
+}
